@@ -15,21 +15,17 @@ header {
   padding-right: 16px;
   padding-bottom: 24px;
   padding-left: 16px;
-
-}
-.header-div{
   display: flex;
   gap: 11px;
   align-items: center;
   justify-content: center;
-
 }
-.header-div > img {
+header > img {
   width: 43px;
   height: 52px;
 }
 
-.header-div > h1 {
+header > h1 {
 
   width: 172;
   height: 60;
