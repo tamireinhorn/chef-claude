@@ -78,3 +78,29 @@ main {
     content: "+";
     margin-right: 5px;
 }
+
+li {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    color: #475467;
+    margin-bottom: 18px;
+
+}
+
+.ingredients-title {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0%;
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+
+.ingredients-div {
+    margin-left: 63px;
+    margin-right: 63px;
+}
