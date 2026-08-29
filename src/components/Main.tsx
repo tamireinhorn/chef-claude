@@ -10,7 +10,6 @@ export default function Main() {
     
 
     function handleSubmit(formData: FormData) {
-        console.log('Form submitted!')
         const newIngredient = formData.get('ingredient')
         if (typeof newIngredient === 'string' && newIngredient.trim() !== ''){
         setIngredients(prevIngredientsList =>
