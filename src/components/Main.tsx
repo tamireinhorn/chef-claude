@@ -9,10 +9,8 @@ export default function Main() {
     )
     
 
-    function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
-        event.preventDefault()  
+    function handleSubmit(formData: FormData) {
         console.log('Form submitted!')
-        const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get('ingredient')
         if (typeof newIngredient === 'string' && newIngredient.trim() !== ''){
         setIngredients(prevIngredientsList =>
@@ -24,7 +22,7 @@ export default function Main() {
     
     return (
         <main>
-            <form className="add-ingredient-form" onSubmit={handleSubmit}>
+            <form className="add-ingredient-form" action={handleSubmit}>
                 <input 
                     aria-label="Add ingredient"
                     type="text"
