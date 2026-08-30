@@ -30,12 +30,19 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            <div className="ingredients-div">
-            <h1 className="ingredients-title">Ingredients on hand:</h1>
-            <ul>
-                {ingredientsList}
-            </ul>
-            </div>
+            <section className = "ingredients-div">
+                <h2 className="ingredients-title">Ingredients on hand:</h2>
+                <ul>
+                    {ingredientsList}
+                </ul>
+                <div className="get-recipe-container">
+                    <div>
+                        <h3>Ready for a recipe?</h3>
+                        <p>Generate a recipe from your list of ingredients.</p>
+                    </div>
+                    <button>Get a recipe</button>
+                </div>
+            </section>
         </main>
     )
 } 
