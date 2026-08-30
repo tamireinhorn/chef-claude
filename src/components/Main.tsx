@@ -18,7 +18,11 @@ export default function Main() {
             }
    
     }
-    
+      /**
+     * Challenge:
+     * Using conditional rendering, only render the new <section> IF
+     * there are ingredients added to the list of ingredients.
+     */ 
     return (
         <main>
             <form className="add-ingredient-form" action={handleSubmit}>
@@ -30,7 +34,9 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            <section className = "ingredients-div">
+            {
+                ingredientsList.length > 0 && 
+                <section className = "ingredients-div">
                 <h2 className="ingredients-title">Ingredients on hand:</h2>
                 <ul>
                     {ingredientsList}
@@ -43,6 +49,7 @@ export default function Main() {
                     <button>Get a recipe</button>
                 </div>
             </section>
+            }
         </main>
     )
 } 
