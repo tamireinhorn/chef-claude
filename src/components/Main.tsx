@@ -8,7 +8,7 @@ export default function Main() {
         (<li key={ingredient}>{ingredient}</li>)
     )
     
-    const [recipeShown, setRecipeShown] = useState<boolean[]>([false])
+    const [recipeShown, setRecipeShown] = useState<boolean>(false)
 
     function handleSubmit(formData: FormData) {
         const newIngredient = formData.get('ingredient')
