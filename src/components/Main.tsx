@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ClaudeRecipe from "./ClaudeRecipe"
+import Ingredients from "./Ingredients"
 
     /**
      * Challenge: clean up our code!
@@ -59,21 +60,8 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
             {
-                ingredientsList.length > 0 && 
-                <section className = "ingredients-div">
-                <h2 className="ingredients-title">Ingredients on hand:</h2>
-                <ul className='ingredients-list'>
-                    {ingredientsList}
-                </ul>
-
-                {ingredientsList.length >= 4 && <div className="get-recipe-container">
-                    <div>
-                        <h3>Ready for a recipe?</h3>
-                        <p>Generate a recipe from your list of ingredients.</p>
-                    </div>
-                    <button onClick={handleClick}>Get a recipe</button>
-                </div>}
-            </section>
+                ingredients.length > 0 && 
+               <Ingredients ingredients={ingredients} onGetRecipe={handleClick}/>
             }
             {recipeShown &&  <ClaudeRecipe/>}
         </main>
