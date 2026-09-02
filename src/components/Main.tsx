@@ -26,12 +26,6 @@ import Ingredients from "./Ingredients"
 export default function Main() {
 
     const [ingredients, setIngredients] = useState<string[]>( ["all the main spices", "pasta", "ground beef", "tomato paste"])
-
-    const ingredientsList = ingredients.map(
-        ingredient => 
-        (<li key={ingredient}>{ingredient}</li>)
-    )
-    
     const [recipeShown, setRecipeShown] = useState<boolean>(false)
 
     function handleSubmit(formData: FormData) {
