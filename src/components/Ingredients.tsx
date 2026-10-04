@@ -1,10 +1,13 @@
+import type { Ref } from "react"
+
 type IngredientsProps = {
     ingredients: string[]
     onGetRecipe: () => void 
+    ref: Ref<HTMLDivElement>
 }
 
 
-export default function Ingredients({ingredients, onGetRecipe}:IngredientsProps ) {
+export default function Ingredients({ingredients, onGetRecipe, ref}:IngredientsProps ) {
 
     const ingredientsList = ingredients.map(
         ingredient => 
@@ -18,7 +21,7 @@ export default function Ingredients({ingredients, onGetRecipe}:IngredientsProps 
                 </ul>
 
                 {ingredientsList.length >= 4 && <div className="get-recipe-container">
-                    <div>
+                    <div ref={ref}>
                         <h3>Ready for a recipe?</h3>
                         <p>Generate a recipe from your list of ingredients.</p>
                     </div>

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import ClaudeRecipe from "./ClaudeRecipe"
 import Ingredients from "./Ingredients"
 import {getRecipeFromMistral} from "../ai.js"
@@ -7,6 +7,8 @@ export default function Main() {
 
     const [ingredients, setIngredients] = useState<string[]>( ["all the main spices", "pasta", "ground beef", "tomato paste"])
     const [recipe, setRecipe] = useState<string>("")
+
+    const recipeSection = useRef<HTMLDivElement>(null)
 
     function handleSubmit(formData: FormData) {
         const newIngredient = formData.get('ingredient')
@@ -17,6 +19,13 @@ export default function Main() {
             }
    
     }
+    
+
+    useEffect(() => {
+        if (recipe !== "" && recipeSection.current){
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+        }
+    }, [recipe]) 
 
     async function getRecipe() {
         const recipeMD = await getRecipeFromMistral(ingredients)
@@ -36,7 +45,7 @@ export default function Main() {
             </form>
             {
                 ingredients.length > 0 && 
-               <Ingredients ingredients={ingredients} onGetRecipe={getRecipe}/>
+               <Ingredients ref={recipeSection} ingredients={ingredients} onGetRecipe={getRecipe}/>
             }
             {recipe &&  <ClaudeRecipe recipe={recipe}/>}
         </main>
